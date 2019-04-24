@@ -1,0 +1,15 @@
+---
+title: "Descrição"
+author: "Leonardo Mancini"
+date: "4/24/2019"
+output: html_document
+---
+
+# Códigos de Lego III
+
+Repositório com os códigos utilizados na disciplina de Lego III, 
+IESP-UERJ, turma 2019-1.
+
+Programa da disciplina:
+https://www.iesp.uerj.br/wp-content/uploads/2019/01/Lego-III.pdf
+
