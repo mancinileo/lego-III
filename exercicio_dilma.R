@@ -87,6 +87,8 @@ glimpse(eseb2turno)
 
 summary(eseb2turno)
 
+attributes(eseb2turno$voto2turno)
+
 #===========================================================
 # Filtrar somente quem votou Dilma ou Aécio no segundo turno
 #===========================================================
@@ -344,6 +346,7 @@ logit1 <- glm(as.integer(voto2turno) ~ sit_economica + aval_gov +
                 voto_dilma2010,data = eseb2turno, 
               family = "binomial"(link = "logit"))
 summary(logit1)
+ 
 
 logit5 <- glm(as.integer(voto2turno) ~ sit_economica + aval_gov + bolsa_familia + 
                 classe_social + padrao_futuro + gosto_partido + 
@@ -442,3 +445,20 @@ heatmapFit::heatmap.fit(eseb2turno$voto2turno, pred, reps = 1000)
 pred2 <- predict(logit2, type = "response")
 
 heatmapFit::heatmap.fit(eseb2turno$voto2turno, pred2, reps = 1000)
+
+
+#===========================================================
+# Brincando com o plto_model(sjPlot) 
+#===========================================================
+
+plot_model(logit1, sort.est = TRUE, value.offset = 0.2)
+
+plot_model(logit1, 
+           # colors = "Accent", 
+           sort.est = TRUE,
+           show.values = TRUE,
+           value.offset = .4,
+           value.size = 4,
+           dot.size = 3,
+           vline.color = "red",
+           width = 1)
